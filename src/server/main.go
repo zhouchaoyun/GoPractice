@@ -3,6 +3,10 @@ package main
 import (
 	"github.com/liangdas/mqant"
 	//	"github.com/liangdas/mqant/app"
+	"server/gate"
+	"server/login"
+	"server/webapp"
+
 	"github.com/liangdas/mqant/module"
 	"github.com/liangdas/mqant/module/modules"
 )
@@ -21,5 +25,8 @@ func main() {
 	app.OnStartup(OnStartup)
 	app.Run(true,
 		modules.MasterModule(),
+		webapp.Module(),
+		login.Module(),
+		mgate.Module(),
 	)
 }
